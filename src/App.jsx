@@ -7,13 +7,11 @@ import {
   MapPin,
   ArrowUpRight,
   ArrowRight,
-  CheckCircle2,
   ShieldCheck,
   Radio,
   Languages,
   Menu,
   X,
-  Upload,
   Droplets,
   Waves,
   Layers,
@@ -1084,22 +1082,6 @@ function TrustSignals() {
    Contact Form
 ---------------------------------------------------------------- */
 function ContactForm() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', district: '', message: '' })
-  const [files, setFiles] = useState([])
-  const [status, setStatus] = useState('idle') // idle | sending | sent
-  const dropRef = useRef(null)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (!form.name || !form.email || !form.message) return
-    setStatus('sending')
-    setTimeout(() => setStatus('sent'), 1200)
-  }
-
-  const handleFiles = (newFiles) => {
-    setFiles((prev) => [...prev, ...Array.from(newFiles)].slice(0, 5))
-  }
-
   return (
     <section id="contact" className="relative py-24 sm:py-32 px-6 sm:px-10 lg:px-16 bg-background">
       <div className="max-w-7xl mx-auto">
@@ -1157,85 +1139,9 @@ function ContactForm() {
 
           {/* Right */}
           <div className="lg:col-span-7">
-            <form onSubmit={handleSubmit} className="bg-surface border border-divider rounded-5xl p-7 sm:p-10 shadow-xl shadow-primary/5">
-              {status !== 'sent' ? (
-                <>
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    <Field label="Name" required value={form.name} onChange={(v) => setForm({ ...form, name: v })} />
-                    <Field label="Email" type="email" required value={form.email} onChange={(v) => setForm({ ...form, email: v })} />
-                    <Field label="Phone" type="tel" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} />
-                    <Field label="District / Organization" value={form.district} onChange={(v) => setForm({ ...form, district: v })} />
-                  </div>
-
-                  <div className="mt-5">
-                    <label className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-2 block">Your message *</label>
-                    <textarea
-                      value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      required
-                      rows={5}
-                      placeholder="Tell us what water data you need, and which districts matter to you…"
-                      className="w-full bg-background border border-divider rounded-2xl px-4 py-3.5 text-ink placeholder-muted/60 focus:border-primary focus:ring-4 focus:ring-primary/15 outline-none transition resize-none font-body"
-                    />
-                  </div>
-
-                  {/* File upload */}
-                  <div
-                    ref={dropRef}
-                    onDragOver={(e) => {
-                      e.preventDefault()
-                      dropRef.current?.classList.add('!border-primary', '!bg-primary/5')
-                    }}
-                    onDragLeave={() => dropRef.current?.classList.remove('!border-primary', '!bg-primary/5')}
-                    onDrop={(e) => {
-                      e.preventDefault()
-                      dropRef.current?.classList.remove('!border-primary', '!bg-primary/5')
-                      handleFiles(e.dataTransfer.files)
-                    }}
-                    className="mt-5 border-2 border-dashed border-divider rounded-3xl p-6 text-center hover:border-primary/50 transition-colors cursor-pointer"
-                  >
-                    <input type="file" multiple id="file-up" className="hidden" onChange={(e) => handleFiles(e.target.files)} accept="image/*" />
-                    <label htmlFor="file-up" className="cursor-pointer block">
-                      <Upload className="h-6 w-6 mx-auto text-primary-dark mb-2" />
-                      <p className="font-display font-semibold text-ink text-sm">Attach a data sample or screenshot</p>
-                      <p className="text-xs text-muted mt-1">Click or drag files here (optional, max 5 images)</p>
-                      {files.length > 0 && (
-                        <div className="mt-4 flex flex-wrap gap-2 justify-center">
-                          {files.map((f, i) => (
-                            <span key={i} className="inline-flex items-center gap-1.5 bg-primary/10 text-primary-dark text-xs px-3 py-1.5 rounded-full font-mono">
-                              <CheckCircle2 className="h-3 w-3" />
-                              {f.name.length > 22 ? f.name.slice(0, 22) + '…' : f.name}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </label>
-                  </div>
-
-                  <div className="mt-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <p className="text-xs text-muted">We’ll reply as soon as we can. Fields marked * are required.</p>
-                    <button
-                      type="submit"
-                      disabled={status === 'sending'}
-                      className="magnetic-btn inline-flex items-center gap-2 bg-primary text-deep font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-primary/30 disabled:opacity-50"
-                    >
-                      {status === 'sending' ? 'Sending…' : 'Send request'}
-                      <ArrowRight className="h-4 w-4" />
-                    </button>
-                  </div>
-                </>
-              ) : (
-                <div className="text-center py-12">
-                  <div className="h-16 w-16 mx-auto rounded-full bg-primary/15 flex items-center justify-center mb-6">
-                    <CheckCircle2 className="h-8 w-8 text-primary-dark" />
-                  </div>
-                  <h3 className="font-display font-bold text-2xl text-ink mb-3">Thanks — we got it</h3>
-                  <p className="text-muted max-w-md mx-auto">
-                    We’ll be in touch shortly about getting JalSathi set up for you.
-                  </p>
-                </div>
-              )}
-            </form>
+            <div className="bg-surface border border-divider rounded-5xl p-7 sm:p-10 shadow-xl shadow-primary/5">
+              <HubSpotForm />
+            </div>
           </div>
         </div>
       </div>
@@ -1243,20 +1149,25 @@ function ContactForm() {
   )
 }
 
-function Field({ label, type = 'text', required, value, onChange }) {
+function HubSpotForm() {
+  useEffect(() => {
+    const SRC = 'https://js-na2.hsforms.net/forms/embed/246557995.js'
+    // Load the HubSpot embed script once; it scans the DOM for .hs-form-frame
+    // elements (including this one) and renders the form into them.
+    if (document.querySelector(`script[src="${SRC}"]`)) return
+    const script = document.createElement('script')
+    script.src = SRC
+    script.defer = true
+    document.body.appendChild(script)
+  }, [])
+
   return (
-    <div>
-      <label className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted mb-2 block">
-        {label} {required && '*'}
-      </label>
-      <input
-        type={type}
-        required={required}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="w-full bg-background border border-divider rounded-2xl px-4 py-3.5 text-ink placeholder-muted/60 focus:border-primary focus:ring-4 focus:ring-primary/15 outline-none transition font-body"
-      />
-    </div>
+    <div
+      className="hs-form-frame min-h-[320px]"
+      data-region="na2"
+      data-form-id="cdb6fa93-c9a3-43a7-8b10-b4c3a83d44dd"
+      data-portal-id="246557995"
+    />
   )
 }
 
