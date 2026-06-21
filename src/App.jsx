@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import {
-  Waypoints,
+  MessagesSquare,
   Languages,
   MessageCircle,
   MessageSquare,
@@ -91,11 +91,11 @@ function Navbar() {
         <div className="flex items-center justify-between gap-6">
           <a href="#home" className="flex items-center gap-2 group">
             <span className="relative flex h-9 w-9 items-center justify-center rounded-full bg-primary">
-              <Waypoints className="h-5 w-5 text-deep" strokeWidth={2.4} />
+              <MessagesSquare className="h-5 w-5 text-deep" strokeWidth={2.4} />
               <span className="absolute inset-0 rounded-full ring-2 ring-primary/30 group-hover:ring-primary/50 transition" />
             </span>
             <span className={`font-display font-bold tracking-tight text-lg ${scrolled ? 'text-ink' : 'text-white'} transition-colors`}>
-              Setu AI
+              Desh AI
             </span>
           </a>
 
@@ -144,7 +144,7 @@ function Navbar() {
           }`}
         >
           <div className="flex items-center justify-between mb-10">
-            <span className="font-display font-bold text-xl text-ink">Setu AI</span>
+            <span className="font-display font-bold text-xl text-ink">Desh AI</span>
             <button onClick={() => setOpen(false)} className="p-2 rounded-full bg-divider/40">
               <X className="h-5 w-5" />
             </button>
@@ -223,7 +223,7 @@ function Hero() {
       <div className="relative z-10 flex min-h-[100dvh] flex-col items-center justify-center text-center">
         <div className="px-6 sm:px-10 lg:px-16 max-w-4xl">
           <p className="hero-meta font-mono text-[11px] sm:text-xs uppercase tracking-[0.28em] text-primary-light mb-6">
-            Setu AI · Custom AI agents
+            Desh AI · Custom AI agents
           </p>
           <h1 className="font-display font-extrabold leading-[0.95] tracking-tight">
             <span className="hero-line-1 block text-4xl sm:text-5xl md:text-6xl">AI agents that speak</span>
@@ -555,14 +555,14 @@ function Pillars() {
       <div className="relative max-w-7xl mx-auto">
         <div className={`flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 sm:mb-24 transition-all duration-1000 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div className="max-w-2xl">
-            <span className="inline-block font-mono text-xs uppercase tracking-[0.3em] text-primary-dark mb-5">╱ Why Setu</span>
+            <span className="inline-block font-mono text-xs uppercase tracking-[0.3em] text-primary-dark mb-5">╱ Why Desh</span>
             <h2 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-ink leading-[1.05] tracking-tight">
               What sets the work
               <span className="block font-serif italic font-medium text-primary-dark">apart.</span>
             </h2>
           </div>
           <p className="text-muted text-lg leading-relaxed max-w-md lg:text-right">
-            Three things every Setu AI build gets right — not buzzwords, just what makes an agent actually useful.
+            Three things every Desh AI build gets right — not buzzwords, just what makes an agent actually useful.
           </p>
         </div>
 
@@ -641,7 +641,7 @@ function Protocol() {
                 <div className="lg:col-span-3 p-8 sm:p-12 lg:p-16 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted">{step.meta}</span>
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-primary-dark bg-primary/10 px-2.5 py-1 rounded-full">Setu process</span>
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-primary-dark bg-primary/10 px-2.5 py-1 rounded-full">Desh process</span>
                   </div>
                   <div className="my-12">
                     <span className="font-display font-extrabold text-[7rem] sm:text-[10rem] leading-none text-primary/15 -mb-4 block">{step.num}</span>
@@ -655,7 +655,7 @@ function Protocol() {
                   <div className="absolute -top-10 -right-10 h-56 w-56 rounded-full bg-primary/25 blur-3xl" />
                   <div className="absolute bottom-0 left-0 h-40 w-40 rounded-full bg-violet-500/20 blur-3xl" />
                   <Icon className="relative h-20 w-20 text-primary" strokeWidth={1.4} />
-                  <div className="absolute bottom-4 right-4 font-mono text-[10px] uppercase tracking-widest text-white/60">{step.num} / Setu AI</div>
+                  <div className="absolute bottom-4 right-4 font-mono text-[10px] uppercase tracking-widest text-white/60">{step.num} / Desh AI</div>
                 </div>
               </div>
             </article>
@@ -774,7 +774,7 @@ function CaseStudy() {
             <p className="text-muted text-[15px] mt-4 leading-relaxed">
               A public AI agent that answers questions about reservoirs, groundwater, rainfall and rivers across
               Andhra Pradesh — in English, Telugu and Tenglish — grounded in official government data. It’s the
-              full Setu playbook in one product: vernacular language, real data, instant answers.
+              full Desh playbook in one product: vernacular language, real data, instant answers.
             </p>
             <ul className="mt-6 space-y-2.5">
               {['Telugu · Tenglish · English', 'Grounded in official water data', 'Built end-to-end and shipped'].map((t) => (
@@ -784,9 +784,9 @@ function CaseStudy() {
               ))}
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/jalsathi" className="magnetic-btn inline-flex items-center gap-2 bg-primary text-deep font-semibold px-6 py-3 rounded-full shadow-lg shadow-primary/30">
-                View live demo <ArrowRight className="h-4 w-4" />
-              </Link>
+              <a href="https://jalsathi-app.onrender.com/" target="_blank" rel="noopener noreferrer" className="magnetic-btn inline-flex items-center gap-2 bg-primary text-deep font-semibold px-6 py-3 rounded-full shadow-lg shadow-primary/30">
+                View live demo <ArrowUpRight className="h-4 w-4" />
+              </a>
               <a href="#contact" className="lift-on-hover inline-flex items-center gap-2 border border-divider text-ink font-medium px-6 py-3 rounded-full hover:border-primary/40">
                 Want one like this?
               </a>
@@ -867,13 +867,13 @@ function Contact() {
             </p>
 
             <div className="mt-10 space-y-4">
-              <a href="mailto:hello@setu-ai.com" className="lift-on-hover flex items-center gap-4 group">
+              <a href="mailto:hello@deshai.com" className="lift-on-hover flex items-center gap-4 group">
                 <span className="h-12 w-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary transition">
                   <Mail className="h-5 w-5 text-primary-dark group-hover:text-deep" />
                 </span>
                 <span>
                   <span className="block font-mono text-[10px] uppercase tracking-widest text-muted">Email</span>
-                  <span className="font-display font-semibold text-ink text-lg">hello@setu-ai.com</span>
+                  <span className="font-display font-semibold text-ink text-lg">hello@deshai.com</span>
                 </span>
               </a>
               <div className="flex items-center gap-4">
@@ -936,7 +936,7 @@ function Footer() {
           </h2>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mt-8 gap-6">
             <p className="text-white/50 max-w-md">
-              Setu AI — custom chatbots, voice and automations for web and WhatsApp, in the languages your customers actually use.
+              Desh AI — custom chatbots, voice and automations for web and WhatsApp, in the languages your customers actually use.
             </p>
             <a href="#contact" className="magnetic-btn inline-flex items-center gap-2 bg-primary text-deep font-semibold px-7 py-3.5 rounded-full self-start sm:self-auto">
               Start a project <ArrowRight className="h-4 w-4" />
@@ -948,9 +948,9 @@ function Footer() {
           <div className="col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <span className="h-9 w-9 rounded-full bg-primary flex items-center justify-center">
-                <Waypoints className="h-5 w-5 text-deep" strokeWidth={2.4} />
+                <MessagesSquare className="h-5 w-5 text-deep" strokeWidth={2.4} />
               </span>
-              <span className="font-display font-bold text-lg">Setu AI</span>
+              <span className="font-display font-bold text-lg">Desh AI</span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs">
               We build custom AI agents — multilingual chatbots, voice agents and automations — grounded in your data and live where your customers are.
@@ -967,11 +967,11 @@ function Footer() {
           </div>
 
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-4">Setu AI</p>
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-4">Desh AI</p>
             <ul className="space-y-2.5">
               <li><a href="#work" className="text-white/65 hover:text-primary transition text-sm">Work</a></li>
               <li><a href="#process" className="text-white/65 hover:text-primary transition text-sm">Process</a></li>
-              <li><Link to="/jalsathi" className="text-white/65 hover:text-primary transition text-sm">JalSathi demo</Link></li>
+              <li><a href="https://jalsathi-app.onrender.com/" target="_blank" rel="noopener noreferrer" className="text-white/65 hover:text-primary transition text-sm">JalSathi demo</a></li>
               <li><a href="#contact" className="text-white/65 hover:text-primary transition text-sm">Contact</a></li>
             </ul>
           </div>
@@ -979,7 +979,7 @@ function Footer() {
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-4">Contact</p>
             <ul className="space-y-2.5">
-              <li><a href="mailto:hello@setu-ai.com" className="text-white/65 hover:text-primary transition text-sm">hello@setu-ai.com</a></li>
+              <li><a href="mailto:hello@deshai.com" className="text-white/65 hover:text-primary transition text-sm">hello@deshai.com</a></li>
               <li className="text-white/65 text-sm">Remote · India & worldwide</li>
             </ul>
           </div>
@@ -996,7 +996,7 @@ function Footer() {
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-white/50 text-xs font-mono">
             <Link to="/privacy" className="hover:text-primary transition">Privacy</Link>
             <Link to="/terms" className="hover:text-primary transition">Terms</Link>
-            <span>© 2026 Setu AI</span>
+            <span>© 2026 Desh AI</span>
           </div>
         </div>
       </div>

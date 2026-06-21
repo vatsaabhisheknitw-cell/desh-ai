@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom'
-import { ArrowLeft, Waypoints } from 'lucide-react'
+import { ArrowLeft, MessagesSquare } from 'lucide-react'
 
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-background text-ink">
       <div className="max-w-3xl mx-auto px-6 py-20">
         <Link to="/" className="inline-flex items-center gap-2 text-muted hover:text-primary-dark transition mb-10 font-mono text-xs uppercase tracking-widest">
-          <ArrowLeft className="h-4 w-4" /> Back to Setu AI
+          <ArrowLeft className="h-4 w-4" /> Back to Desh AI
         </Link>
 
         <div className="flex items-center gap-2 mb-8">
           <span className="h-9 w-9 rounded-full bg-primary flex items-center justify-center">
-            <Waypoints className="h-5 w-5 text-deep" strokeWidth={2.4} />
+            <MessagesSquare className="h-5 w-5 text-deep" strokeWidth={2.4} />
           </span>
-          <span className="font-display font-bold text-lg">Setu AI</span>
+          <span className="font-display font-bold text-lg">Desh AI</span>
         </div>
 
         <h1 className="font-display font-extrabold text-4xl sm:text-5xl tracking-tight mb-4">Privacy Policy</h1>
@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
           </section>
           <section>
             <h2 className="font-display font-bold text-xl text-ink mb-2">Contact</h2>
-            <p>Questions about this policy? Reach us at hello@setu-ai.com.</p>
+            <p>Questions about this policy? Reach us at hello@deshai.com.</p>
           </section>
         </div>
       </div>

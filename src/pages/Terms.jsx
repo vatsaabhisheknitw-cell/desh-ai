@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom'
-import { ArrowLeft, Waypoints } from 'lucide-react'
+import { ArrowLeft, MessagesSquare } from 'lucide-react'
 
 export default function Terms() {
   return (
     <div className="min-h-screen bg-background text-ink">
       <div className="max-w-3xl mx-auto px-6 py-20">
         <Link to="/" className="inline-flex items-center gap-2 text-muted hover:text-primary-dark transition mb-10 font-mono text-xs uppercase tracking-widest">
-          <ArrowLeft className="h-4 w-4" /> Back to Setu AI
+          <ArrowLeft className="h-4 w-4" /> Back to Desh AI
         </Link>
 
         <div className="flex items-center gap-2 mb-8">
           <span className="h-9 w-9 rounded-full bg-primary flex items-center justify-center">
-            <Waypoints className="h-5 w-5 text-deep" strokeWidth={2.4} />
+            <MessagesSquare className="h-5 w-5 text-deep" strokeWidth={2.4} />
           </span>
-          <span className="font-display font-bold text-lg">Setu AI</span>
+          <span className="font-display font-bold text-lg">Desh AI</span>
         </div>
 
         <h1 className="font-display font-extrabold text-4xl sm:text-5xl tracking-tight mb-4">Terms of Use</h1>
@@ -21,8 +21,8 @@ export default function Terms() {
 
         <div className="space-y-8 text-[15px] leading-relaxed text-ink/80">
           <section>
-            <h2 className="font-display font-bold text-xl text-ink mb-2">About Setu AI</h2>
-            <p>Setu AI designs and builds custom AI agents — multilingual chatbots, voice agents and automations for web and WhatsApp. This website presents our services and lets you get in touch. By using it you agree to these terms.</p>
+            <h2 className="font-display font-bold text-xl text-ink mb-2">About Desh AI</h2>
+            <p>Desh AI designs and builds custom AI agents — multilingual chatbots, voice agents and automations for web and WhatsApp. This website presents our services and lets you get in touch. By using it you agree to these terms.</p>
           </section>
           <section>
             <h2 className="font-display font-bold text-xl text-ink mb-2">Enquiries &amp; quotes</h2>
@@ -38,7 +38,7 @@ export default function Terms() {
           </section>
           <section>
             <h2 className="font-display font-bold text-xl text-ink mb-2">Contact</h2>
-            <p>For questions about these terms, write to hello@setu-ai.com.</p>
+            <p>For questions about these terms, write to hello@deshai.com.</p>
           </section>
         </div>
       </div>
