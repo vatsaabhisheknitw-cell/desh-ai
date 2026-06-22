@@ -38,11 +38,21 @@ export default function LeadForm({
   )
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
   const [errorMsg, setErrorMsg] = useState('')
+  // Honeypot: a hidden field real users never see. Bots that auto-fill every
+  // input will populate it; if it has a value we silently drop the submission.
+  const [trap, setTrap] = useState('')
 
   const set = (name, value) => setForm((prev) => ({ ...prev, [name]: value }))
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    // Spam caught by the honeypot: pretend success, never hit HubSpot.
+    if (trap) {
+      setStatus('sent')
+      return
+    }
+
     setStatus('sending')
     setErrorMsg('')
 
@@ -95,6 +105,20 @@ export default function LeadForm({
 
   return (
     <form onSubmit={handleSubmit}>
+      {/* Honeypot — hidden from humans (and screen readers), visible to dumb bots. */}
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+        <label htmlFor="lf-company-url">Company website</label>
+        <input
+          id="lf-company-url"
+          name="company_url"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={trap}
+          onChange={(e) => setTrap(e.target.value)}
+        />
+      </div>
+
       <div className="grid sm:grid-cols-2 gap-5">
         {halfFields.map((f) => (
           <div key={f.name}>
