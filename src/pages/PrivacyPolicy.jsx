@@ -29,16 +29,32 @@ export default function PrivacyPolicy() {
             <p>We use your information only to reply to you, discuss and deliver the AI-agent work you ask about, and keep you updated on it. We do not sell your data or share it with third-party marketers.</p>
           </section>
           <section>
+            <h2 className="font-display font-bold text-xl text-ink mb-2">Third-party services we use</h2>
+            <p>Our contact form is powered by HubSpot. When you submit it, the details you enter are sent to and stored by HubSpot, Inc. — a service provider based in the United States — on our behalf so we can manage and respond to your enquiry. This site is hosted on Vercel, which processes the basic technical request data needed to serve the pages to you. Because these providers operate outside India, your information may be processed abroad under their own security and privacy safeguards. We do not sell your data or share it with third-party marketers.</p>
+          </section>
+          <section>
             <h2 className="font-display font-bold text-xl text-ink mb-2">Client data we build on</h2>
             <p>When we build an agent on your behalf, any data or documents you share for that purpose are used only to build and operate your agent, kept secure, and never resold. Ownership and handling are agreed in writing per project.</p>
           </section>
           <section>
             <h2 className="font-display font-bold text-xl text-ink mb-2">Storage &amp; security</h2>
-            <p>Your information is stored securely and retained only as long as needed to serve your request. You may ask us to delete your data at any time by writing to the contact address on our homepage.</p>
+            <p>Your information is stored securely and retained only as long as needed to serve your request. You may ask us to delete your data at any time by writing to the contact address below.</p>
+          </section>
+          <section>
+            <h2 className="font-display font-bold text-xl text-ink mb-2">Cookies</h2>
+            <p>This site does not use advertising or cross-site tracking cookies, and we do not run third-party analytics or ad pixels. Only the essential technical data required to load the pages and submit the contact form is processed.</p>
+          </section>
+          <section>
+            <h2 className="font-display font-bold text-xl text-ink mb-2">Your rights</h2>
+            <p>Under India&rsquo;s Digital Personal Data Protection Act, 2023 (and equivalent laws where they apply), you may ask us to access, correct, or delete the personal data you have shared with us, and you may withdraw consent at any time. To exercise any of these rights, email us at the address below and we will act on your request.</p>
+          </section>
+          <section>
+            <h2 className="font-display font-bold text-xl text-ink mb-2">Governing law</h2>
+            <p>This policy is governed by the laws of India. We may update it from time to time; the &ldquo;last updated&rdquo; date above reflects the current version.</p>
           </section>
           <section>
             <h2 className="font-display font-bold text-xl text-ink mb-2">Contact</h2>
-            <p>Questions about this policy? Reach us at saharsa18215@gmail.com.</p>
+            <p>Questions about this policy, or want to exercise your data rights? Reach us at saharsa18215@gmail.com.</p>
           </section>
         </div>
       </div>
