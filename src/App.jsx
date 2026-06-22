@@ -867,13 +867,13 @@ function Contact() {
             </p>
 
             <div className="mt-10 space-y-4">
-              <a href="mailto:hello@deshai.com" className="lift-on-hover flex items-center gap-4 group">
+              <a href="mailto:saharsa18215@gmail.com" className="lift-on-hover flex items-center gap-4 group">
                 <span className="h-12 w-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary transition">
                   <Mail className="h-5 w-5 text-primary-dark group-hover:text-deep" />
                 </span>
                 <span>
                   <span className="block font-mono text-[10px] uppercase tracking-widest text-muted">Email</span>
-                  <span className="font-display font-semibold text-ink text-lg">hello@deshai.com</span>
+                  <span className="font-display font-semibold text-ink text-lg">saharsa18215@gmail.com</span>
                 </span>
               </a>
               <div className="flex items-center gap-4">
@@ -979,7 +979,7 @@ function Footer() {
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-4">Contact</p>
             <ul className="space-y-2.5">
-              <li><a href="mailto:hello@deshai.com" className="text-white/65 hover:text-primary transition text-sm">hello@deshai.com</a></li>
+              <li><a href="mailto:saharsa18215@gmail.com" className="text-white/65 hover:text-primary transition text-sm">saharsa18215@gmail.com</a></li>
               <li className="text-white/65 text-sm">Remote · India & worldwide</li>
             </ul>
           </div>

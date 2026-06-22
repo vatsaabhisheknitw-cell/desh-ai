@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
           </section>
           <section>
             <h2 className="font-display font-bold text-xl text-ink mb-2">Contact</h2>
-            <p>Questions about this policy? Reach us at hello@deshai.com.</p>
+            <p>Questions about this policy? Reach us at saharsa18215@gmail.com.</p>
           </section>
         </div>
       </div>

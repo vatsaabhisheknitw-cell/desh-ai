@@ -38,7 +38,7 @@ export default function Terms() {
           </section>
           <section>
             <h2 className="font-display font-bold text-xl text-ink mb-2">Contact</h2>
-            <p>For questions about these terms, write to hello@deshai.com.</p>
+            <p>For questions about these terms, write to saharsa18215@gmail.com.</p>
           </section>
         </div>
       </div>
